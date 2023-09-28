@@ -1,0 +1,18 @@
+<!-- show all trips here -->
+
+    <div style="padding-top:5px">
+        <button class="button button--add-stack" new:trip>
+            Add Trip
+        </button>
+    </div>
+
+    <br>
+
+    all of {{currentUser.details.username}}'s trips here
+
+    <div array key="trips">
+        {{#for trip in trips}}
+            <div object key:text="@innerText" edit:text>{{trip.text}}</div>
+        {{/for}}
+    </div>
+ 
