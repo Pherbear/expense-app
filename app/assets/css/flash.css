@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .flash {
   margin: 0 -1.5rem 0 -1.5rem;
   padding: 9px 12px 11px;

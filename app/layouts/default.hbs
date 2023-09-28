@@ -20,9 +20,14 @@
     <div class="nav">
       <a class="logo" href="{{#if currentUser}}/{{currentUser.details.username}}{{else}}/{{/if}}">
         <img class="logo__image" src="/assets/images/logo.svg">
-        <span class="logo__text">TaskFellow <span class="logo__version">v1.0</span></span>
+        <span class="logo__text">Expense App <span class="logo__version">v1.0</span></span>
       </a>
       {{#if currentUser}}
+        <div class ="links">
+          <a href="/">Home</a>
+          <a href="/create-trip">Create Trip</a>
+          <a href="/about">About Us</a>
+        </div>
         <div class="nav__user">
           <div>{{currentUser.details.username}}</div>
           <a class="nav__button" href="/user/logout">Logout</a>

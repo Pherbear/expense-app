@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .text-field {
   margin-bottom: 1.5rem;
   text-align: left;

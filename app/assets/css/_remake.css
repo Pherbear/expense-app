@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Remake CSS helpers
  *
  * This file includes some simple default CSS that 

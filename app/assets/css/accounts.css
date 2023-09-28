@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .accounts__form {
   margin: 96px auto;
   max-width: 320px;
