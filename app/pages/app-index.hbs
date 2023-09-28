@@ -1,4 +1,4 @@
-{{!-- <div class="header">
+<div class="header">
   <div class="header__text" object key:board-heading="@innerText" default:board-heading="My Projects"
     edit:board-heading:without-remove>{{boardHeading}}</div>
   <button class="button button--add-trip" new:trip>Add stack</button>
@@ -29,24 +29,6 @@
         </button>
       </div>
     </div>
-    {{/for}}
-  </div>
-</div> --}}
-
-<div style="padding-top:5px">
-  <button class="button button--add-trip" new:trip>
-    Add Trip
-  </button>
-</div>
-
-<br>
-
-all of {{currentUser.details.username}}'s trips here
-
-<div object>
-  <div array key="trips">
-    {{#for trip in trips}}
-    <div object key:text="@innerText" edit:text>{{trip.text}}</div>
     {{/for}}
   </div>
 </div>

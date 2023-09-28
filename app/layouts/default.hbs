@@ -25,7 +25,7 @@
       {{#if currentUser}}
         <div class ="links">
           <a href="/">Home</a>
-          <a href="/my-trips">My Trips</a>
+          <a href="{{currentUser.details.username}}/my-trips">My Trips</a>
           <a href="/about">About Us</a>
         </div>
         <div class="nav__user">
