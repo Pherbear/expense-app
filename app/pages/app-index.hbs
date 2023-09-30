@@ -1,7 +1,14 @@
 <div class="header">
-  <div class="header__text" object key:board-heading="@innerText" default:board-heading="My Projects"
-    edit:board-heading:without-remove>{{boardHeading}}</div>
-  <button class="button button--add-trip" new:trip>Add stack</button>
+  <div 
+    class="header__text" 
+    object 
+    key:board-heading="@innerText" 
+    default:board-heading="My Projects"
+    edit:board-heading:without-remove
+  >
+    {{boardHeading}}
+  </div>
+  <button class="button button--add-stack" new:stack>Add stack</button>
 </div>
 <div class="board-container">
   <div class="board" array key="stacks" sortable="stacks">

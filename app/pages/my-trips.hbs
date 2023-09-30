@@ -1,5 +1,7 @@
 <!-- show all trips here -->
 
+
+
 <div style="padding-top:5px">
   <button class="button button--add-trip" new:trip>
     Add Trip
@@ -8,12 +10,18 @@
 
 <br>
 
-all of {{currentUser.details.username}}'s trips here
+all of {{currentUser.details.username}}'s trips here:
 
 <div object>
-  <div array key="trips">
+  <div array key="trips" class="trips">
     {{#for trip in trips}}
-    <div object key:text="@innerText">{{default trip.text "new trip"}}</div>
+    <a 
+        object key:text="@innerText"
+        key:id="{{trip.id}}"
+        href="trip/{{trip.id}}"
+    >
+        {{default trip.text "New Trip"}}
+    </a>
     {{/for}}
   </div>
 </div>

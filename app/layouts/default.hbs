@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/text-field.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/front-page.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/kanban.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 <body>
   <div class="container">
@@ -25,7 +26,7 @@
       {{#if currentUser}}
         <div class ="links">
           <a href="/">Home</a>
-          <a href="{{currentUser.details.username}}/my-trips">My Trips</a>
+          <a href="/{{currentUser.details.username}}/my-trips">My Trips</a>
           <a href="/about">About Us</a>
         </div>
         <div class="nav__user">

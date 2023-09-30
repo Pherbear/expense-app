@@ -1,0 +1,28 @@
+<div object key:text="@search" key:id="{{currentItem.id}}" >
+    <div 
+        target:text="@innerText"
+        edit:text:without-remove
+        style="font-size: 40px;"
+    >
+        {{currentItem.text}}
+    </div>
+
+    <button class="button button--add-participant" new:participant>Add participant</button>
+    Participants:
+
+    <div object>
+        <div class="participants" key="participants" array sortable="participants">
+            {{#for participant in currentItem.participants}}
+            <a object key:name="@search" key:id="{{participant.id}}" edit:name>
+                <p target:name="@innerText">
+                    {{default participant.name "y"}}
+                </p>
+            </a>
+            {{/for}}
+        </div>
+    </div>
+
+    
+
+
+</div>
