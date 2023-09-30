@@ -7,10 +7,12 @@
         {{currentItem.text}}
     </div>
 
-    <button class="button button--add-participant" new:participant>Add participant</button>
-    <div style="margin-top: 20px; margin-left: 10px;">
+    {{!-- <button class="button button--add-participant" new:participant>Add participant</button> --}}
+    <div style="margin-top: 20px; margin-left: 30px;">
         Participants:
+        <button class="button button--add-participant" new:participant style="margin-left: 20px;">Add Participant</button>
     </div>
+    
 
     <div object>
         <div class="participants" key="participants" array sortable="participants">
