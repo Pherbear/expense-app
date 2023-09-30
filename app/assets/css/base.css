@@ -78,3 +78,31 @@ body {
   height: 100vh;
   font-family: "Work Sans", sans-serif;
 }
+
+.participant {
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-bottom: 30px;
+  border: 10px 10px solid black;
+  border-style: dashed;
+  width: 300px;
+}
+
+.event_box {
+  margin-left: 100px;
+  margin-bottom: 15px;
+  border: 10px 10px solid black;
+  border-style: double;
+  width: 300px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.price_box {
+  margin-left: 100px;
+  border: 10px 10px solid black;
+  border-style: double;
+  width: 300px;
+  display: inline-block;
+  cursor: pointer;
+}

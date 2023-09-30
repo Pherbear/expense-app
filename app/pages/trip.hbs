@@ -8,15 +8,42 @@
     </div>
 
     <button class="button button--add-participant" new:participant>Add participant</button>
-    Participants:
+    <div style="margin-top: 20px; margin-left: 10px;">
+        Participants:
+    </div>
 
     <div object>
         <div class="participants" key="participants" array sortable="participants">
             {{#for participant in currentItem.participants}}
-            <a object key:name="@search" key:id="{{participant.id}}" edit:name>
-                <p target:name="@innerText">
-                    {{default participant.name "y"}}
+            <a object key:name="@search" key:id="{{participant.id}}">
+                <p target:name="@innerText" class="participant" edit:name>
+                    {{default participant.name "New Participant"}}
                 </p>
+
+                
+                <div object>
+                  <div array key="events" class="events">
+                    {{#for event in events}}
+                    <div
+                        object key:p-event="@search"
+                                key:price="@search"
+                    >
+                        <div target:p-event="@innerText" edit:p-event class="event_box">
+                            {{default event.pEvent "Event"}}
+                        </div>
+                        <p style="display: inline-block; margin-left: 100px;">...............................</p>
+                        <div target:price="@innerText" edit:price class="price_box">
+                            {{default event.price "0.00"}}
+                        </div>
+                    </div>
+                    {{/for}}
+                  </div>
+                </div>
+                <div style="padding-top:5px">
+                  <button class="button button--add-event" style="margin-left: 700px" new:event>
+                    Add Event
+                  </button>
+                </div>
             </a>
             {{/for}}
         </div>
