@@ -1,9 +1,5 @@
-<div object key:text="@search" key:id="{{currentItem.id}}" >
-    <div 
-        target:text="@innerText"
-        edit:text:without-remove
-        style="font-size: 40px;"
-    >
+<div object key:text="@search" key:id="{{currentItem.id}}">
+    <div target:text="@innerText" edit:text:without-remove style="font-size: 40px;">
         {{currentItem.text}}
     </div>
 
@@ -13,16 +9,33 @@
     <div object>
         <div class="participants" key="participants" array sortable="participants">
             {{#for participant in currentItem.participants}}
-            <a object key:name="@search" key:id="{{participant.id}}" edit:name>
-                <p target:name="@innerText">
-                    {{default participant.name "y"}}
-                </p>
-            </a>
+            <div>
+                <a object key:name="@search" key:id="{{participant.id}}">
+                    <p target:name="@innerText" edit:name>
+                        {{default participant.name "New Participant"}}
+                    </p>
+                    <button class="button" new:expense>Add Expense</button>
+                    <br>
+                    {{participant.name}}'s expenses:
+                    <div array class="expenses" key="expenses" sortable="expenses">
+                        {{#for expense in participant.expenses}}
+                        <a object key:name="@search" key:price="@search" key:id="{{expense.id}}">
+                            <p target:name="@innerText" edit:name>
+                                {{default expense.name "New Expense"}}
+                            </p>
+                            <p target:price="@innerText" edit:price>
+                                {{default expense.price "0.00"}}
+                            </p>     
+                        </a>
+                        {{/for}}
+                    </div>
+                </a>
+            </div>
             {{/for}}
         </div>
     </div>
 
-    
+
 
 
 </div>

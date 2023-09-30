@@ -13,17 +13,32 @@
 <div class="board-container">
   <div class="board" array key="stacks" sortable="stacks">
     {{#for stack in stacks}}
-    <div class="stack" object key:stack-heading="@search" default:stack-heading="A Project">
+    <div class="stack" 
+      object 
+      key:stack-heading="@search" 
+      default:stack-heading="A Project">
       <div class="stack__top">
-        <p class="stack__text" target:stack-heading="@innerText" edit:stack-heading>{{default stack.stackHeading "New
-          stack item"}}</p>
-        <button class="button button--plus-square" new:card>
+        <p class="stack__text" 
+          target:stack-heading="@innerText" 
+          edit:stack-heading>
+          {{default stack.stackHeading "Newstack item"}}
+        </p>
+        <button 
+          class="button button--plus-square" 
+          new:card>
           <img class="stack__new-icon" src="/assets/images/new.svg">
         </button>
       </div>
-      <div class="stack__list" key="cards" array sortable="cards">
+      <div 
+        class="stack__list" 
+        key="cards" 
+        array 
+        sortable="cards">
         {{#for card in stack.cards}}
-        <div class="card" object key:card-text="@search" edit:card-text>
+        <div class="card" 
+          object 
+          key:card-text="@search" 
+          edit:card-text>
           <p class="card__text" target:card-text="@innerText">{{default card.cardText "New card item"}}</p>
           <img class="card__drag" src="/assets/images/drag.svg">
         </div>
