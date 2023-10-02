@@ -1,10 +1,18 @@
-<div object key:text="@search" key:id="{{currentItem.id}}" >
+<div object key:text="@search" key:id="{{currentItem.id}}" key:sum="@search">
     <div 
         target:text="@innerText"
         edit:text:without-remove
         style="font-size: 40px;"
     >
         {{currentItem.text}}
+    </div>
+    sum:
+    <div
+        target:sum="@innerText"
+        watch:sum="summy()"
+        id="my_sum"
+    >
+        {{currentItem.sum}}
     </div>
 
     {{!-- <button class="button button--add-participant" new:participant>Add participant</button> --}}
@@ -26,17 +34,26 @@
                 <div object>
                   <div array key="events" class="events">
                     {{#for event in participant.events}}
+                    <div >
+
+                    </div>
                     <div
                         object 
                         key:p-event="@search"
                         key:price="@search"
                         key:id="{{event.id}}"
+                        watch:price="summy({{event.id}})"
                     >
                         <div target:p-event="@innerText" edit:p-event class="event_box">
                             {{default event.pEvent "Event"}}
                         </div>
                         <p style="display: inline-block; margin-left: 100px;">...............................</p>
-                        <div target:price="@innerText" edit:price class="price_box">
+                        <div 
+                            target:price="@innerText" 
+                            edit:price 
+                            class="price_box"
+                            watch:price="summy({{event.id}})"
+                            >
                             {{default event.price "0.00"}}
                         </div>
                     </div>
@@ -53,7 +70,9 @@
         </div>
     </div>
 
-    
-
-
 </div>
+
+
+<script>
+    let theRealSum = "r94395jenwojewfnk wjndk "
+</script>
