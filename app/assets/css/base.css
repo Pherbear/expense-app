@@ -106,3 +106,13 @@ body {
   display: inline-block;
   cursor: pointer;
 }
+
+.trip_name 
+{
+  margin-left: 500px;
+  margin-top: 20px;
+  border: 10px 10px pink;
+  border-style:dotted;
+  width: 270px;
+  text-align: center;
+}
