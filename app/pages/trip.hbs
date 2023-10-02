@@ -53,6 +53,7 @@
                             target:price="@innerText" 
                             edit:price 
                             class="price_box"
+                            id="my_price"
                             watch:price="summy({{event.id}})"
                             >
                             {{default event.price "0.00"}}
@@ -75,5 +76,22 @@
 
 
 <script>
-    let theRealSum = "r94395jenwojewfnk wjndk "
+    console.log("hello!")
+
+    let sum = 0
+    function loadpage(){
+
+        let my_prices = document.querySelectorAll("#my_price")
+        console.log(my_prices)
+        for (price of my_prices){
+            console.log(price)
+            console.log(price.innerText)
+            sum += parseFloat(price.innerText)
+        }
+        let my_sum = document.getElementById("my_sum")
+        my_sum.innerHTML = sum
+        console.log(sum)
+    }
+    loadpage()
+
 </script>
