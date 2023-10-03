@@ -10,10 +10,8 @@
     sum:
     <div
         target:sum="@innerText"
-        watch:sum="summy()"
         id="my_sum"
     >
-        {{currentItem.sum}}
     </div>
 
     {{!-- <button class="button button--add-participant" new:participant>Add participant</button> --}}
@@ -33,7 +31,8 @@
 
                 
                 <div object>
-                  <div array key="events" class="events">
+                  <div array key="events" class="events" id="my_participant">
+                    <div id="participant_total"></div>
                     {{#for event in participant.events}}
                     <div >
 
@@ -62,6 +61,7 @@
                     {{/for}}
                   </div>
                 </div>
+                <div id="participant_sum"><!--this is where the participant sum is--></div>
                 <div style="padding-top:5px">
                   <button class="button button--add-event" style="margin-left: 700px" new:event>
                     Add Event
@@ -76,22 +76,30 @@
 
 
 <script>
-    console.log("hello!")
 
     let sum = 0
-    function loadpage(){
 
-        let my_prices = document.querySelectorAll("#my_price")
-        console.log(my_prices)
-        for (price of my_prices){
-            console.log(price)
-            console.log(price.innerText)
-            sum += parseFloat(price.innerText)
+    function loadpage(){
+        sum = 0
+        let my_participants = document.querySelectorAll('#my_participant')
+        console.log(my_participants)
+        for (participant of my_participants) {
+            let price_elements = participant.querySelectorAll('#my_price')
+            let participant_sum = 0
+            for(price_element of price_elements){
+                console.log(price_element.innerText)
+                participant_sum += parseFloat(price_element.innerText)
+                price_element.innerText = parseFloat(price_element.innerText).toFixed(2)
+            }
+            let price_output = participant.querySelector('#participant_total')
+            sum += participant_sum
+            price_output.innerText = `$ ${participant_sum.toFixed(2)}`
         }
         let my_sum = document.getElementById("my_sum")
-        my_sum.innerHTML = sum
-        console.log(sum)
+        my_sum.innerHTML = `$ ${sum.toFixed(2)}`
+        //[0].children[3].children.my_price.innerText
     }
+
     loadpage()
 
 </script>
