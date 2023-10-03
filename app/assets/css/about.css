@@ -5,11 +5,12 @@
     margin-right: auto;
   }
 
-  .about-image{
+  /* .about-image{
     width: 900px;
-  }
+  } */
   
   .image-text {
+
     position: absolute;
     bottom: 30px;
     left: 30px;
