@@ -12,31 +12,9 @@ Remake.init({
     },
     summy: (data) => {
       let {value, watchFuncArgs, watchElem, watchAttrName, camelCaseKeyName, dataSourceElem, dataTargetElems, object} = data;
-      //console.log(Remake.getKeyNamesfromElem(watchElem))
-      //console.log(getKeyNamesfromElem(watchElem))
-      //Remake.getSaveData(watchElem)
-      //let sum = 'sum'
-      // let val = 20
-      // const name = 'p-event'
-      console.log(watchFuncArgs[0])
-      console.log(value)
-      let sum_elem = watchElem.closest('[key\\:sum]')
-      let all_data = Remake.getSaveData(sum_elem)
-      console.log(all_data)
 
-      var sum = 0.0
-      for(participant of all_data.participants){
-        for(pevent of participant.events){
-          sum += parseFloat(pevent.price)
-        }
-      }
+      loadpage()
 
-      let my_sum = document.getElementById("my_sum")
-      my_sum.innerHTML = sum
-
-      console.log(values)
-      console.log(sum)
-      console.log("sum!");
     } 
   },
 });
