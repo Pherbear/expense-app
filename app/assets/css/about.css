@@ -1,20 +1,59 @@
 .Mission {
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+}
 
-  .about-image{
-    width: 900px;
-  }
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.about-image {
+  width: 650px; 
+  margin: 15px 15px 15px 15px;
+  border-radius: 50%;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  background-color: purple;
+  color: white;
+  padding: 5px 20px 5px 20px;
+}
+
+.about-us {
+  text-align: center;
+  margin-right: 25px;  
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #541c2c;
+}
+
+.what-why{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.what{
+  background-color: #FDFD96;
+  background-image: url("/assets/images/cash-hero-TP.jpg");
+  width: 50%;
+  height: 300px;
+}
+.why{
+  background-color: #fda487;
+  background-image: url("/assets/images/Cash.jpg");
+  width: 50%;
+  height: 300px;
   
-  .image-text {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    background-color: purple;
-    color: white;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+}
+.journey{
+  background-color: pink;
+  padding: 30px 20px 30px 20px;
+  text-align: center;
+  color: #541c2c;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
