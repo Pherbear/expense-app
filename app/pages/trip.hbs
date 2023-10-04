@@ -1,19 +1,20 @@
 <div object key:text="@search" key:id="{{currentItem.id}}" key:sum="@search">
-    <div 
-        target:text="@innerText"
-        edit:text:without-remove
-        style="font-size: 40px;"
-        class="trip_name"
-    >
-        {{currentItem.text}}
+    <div class="trip_container">
+        <div 
+            target:text="@innerText"
+            edit:text:without-remove
+            style="font-size: 40px;"
+            class="trip_name"
+        >
+            {{currentItem.text}}
+        </div>
     </div>
-    <div>
+    <div class="sum_container">
     <div id="my_sum"></div>
     </div>
 
-    {{!-- <button class="button button--add-participant" new:participant>Add participant</button> --}}
-    <div style="margin-top: 20px; margin-left: 30px;">
-        Participants:
+    <div style="margin-top: 20px; margin-left: 30px;" class="participant_button">
+        <div>Participants:</div>
         <button class="button button--add-participant" new:participant style="margin-left: 20px;">Add Participant</button>
     </div>
     
@@ -21,7 +22,7 @@
     <div object>
         <div class="participants" key="participants" array sortable="participants" >
             {{#for participant in currentItem.participants}}
-            <a object key:name="@search" key:id="{{participant.id}}" id="my_participant">
+            <div object key:name="@search" key:id="{{participant.id}}" id="my_participant" class="my_participant">
                 <div class="participant_info"> 
                     <p target:name="@innerText" class="participant" edit:name watch:name="summy()">
                         {{default participant.name "New Participant"}}
@@ -30,26 +31,23 @@
                 </div>
 
                 <div object>
-                  <div array key="events" class="events" >
+                  <div array key="events" class="events">
                     {{#for event in participant.events}}
-                    <div >
-
-                    </div>
                     <div
                         object 
                         key:p-event="@search"
                         key:price="@search"
                         key:id="{{event.id}}"
                         watch:price="summy()"
+                        class="event"
                     >
                         <div target:p-event="@innerText" edit:p-event class="event_box">
                             {{default event.pEvent "Event"}}
                         </div>
-                        <p style="display: inline-block; margin-left: 100px;">...............................</p>
                         <div 
                             target:price="@innerText" 
                             edit:price 
-                            class="price_box"
+                            class="event_box"
                             id="my_price"
                             watch:price="summy()"
                             >
@@ -60,12 +58,12 @@
                   </div>
                 </div>
                 <div id="participant_sum"><!--this is where the participant sum is--></div>
-                <div style="padding-top:5px">
-                  <button class="button button--add-event" style="margin-left: 700px" new:event>
+                <div class="event_button">
+                  <button class="button button--add-event" new:event>
                     Add Event
                   </button>
                 </div>
-            </a>
+            </div>
             {{/for}}
         </div>
     </div>
@@ -93,7 +91,6 @@
         }
         let my_sum = document.getElementById("my_sum")
         my_sum.innerHTML = `Trip Total: $ ${sum.toFixed(2)}`
-        //[0].children[3].children.my_price.innerText
 
         //split each
         let split = (sum / my_participants.length).toFixed(2)
