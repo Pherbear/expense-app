@@ -9,7 +9,7 @@
             <h1>Simplicity</h1>
             <p> Have fun with less headaches</p>
         </div>
-        <div style="">
+        <div style="padding: 30px;">
             
               At BillBuddies, our mission is to simplify and enhance the way friends and travelers share expenses. 
           We believe that memorable adventures should be free from financial worries. Our innovative platform empowers groups 
@@ -18,7 +18,7 @@
           and enjoyable experience. Join us on a mission to redefine how friends travel, one shared expense at a time.
 
           {{#if currentUser}}
-    <a class="button button--large" href="/{{currentUser.details.username}}" style="margin-left: 50%; margin-top: 50%; margin-bottom: 50px;">Go to your board</a>
+    <a class="button button--large" href="/{{currentUser.details.username}}" style="margin-left: 50%; margin-top: 50%; margin-bottom: 50px;">Check out my trips</a>
   {{else}}
     <a class="button button--large" href="/user/signup" style="margin-left: 50%; margin-top: 50%; margin-bottom: 50px;">Sign up!</a>
   {{/if}}
