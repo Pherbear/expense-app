@@ -7,11 +7,8 @@
     >
         {{currentItem.text}}
     </div>
-    sum:
-    <div
-        target:sum="@innerText"
-        id="my_sum"
-    >
+    <div>
+    <div id="my_sum"></div>
     </div>
 
     {{!-- <button class="button button--add-participant" new:participant>Add participant</button> --}}
@@ -22,17 +19,18 @@
     
 
     <div object>
-        <div class="participants" key="participants" array sortable="participants">
+        <div class="participants" key="participants" array sortable="participants" >
             {{#for participant in currentItem.participants}}
-            <a object key:name="@search" key:id="{{participant.id}}">
-                <p target:name="@innerText" class="participant" edit:name>
-                    {{default participant.name "New Participant"}}
-                </p>
-
-                
-                <div object>
-                  <div array key="events" class="events" id="my_participant">
+            <a object key:name="@search" key:id="{{participant.id}}" id="my_participant">
+                <div class="participant_info"> 
+                    <p target:name="@innerText" class="participant" edit:name watch:name="summy()">
+                        {{default participant.name "New Participant"}}
+                    </p>
                     <div id="participant_total"></div>
+                </div>
+
+                <div object>
+                  <div array key="events" class="events" >
                     {{#for event in participant.events}}
                     <div >
 
@@ -42,7 +40,7 @@
                         key:p-event="@search"
                         key:price="@search"
                         key:id="{{event.id}}"
-                        watch:price="summy({{event.id}})"
+                        watch:price="summy()"
                     >
                         <div target:p-event="@innerText" edit:p-event class="event_box">
                             {{default event.pEvent "Event"}}
@@ -53,7 +51,7 @@
                             edit:price 
                             class="price_box"
                             id="my_price"
-                            watch:price="summy({{event.id}})"
+                            watch:price="summy()"
                             >
                             {{default event.price "0.00"}}
                         </div>
@@ -76,15 +74,13 @@
 
 
 <script>
-
-    let sum = 0
-
     function loadpage(){
-        sum = 0
+        let sum = 0
         let my_participants = document.querySelectorAll('#my_participant')
         console.log(my_participants)
         for (participant of my_participants) {
             let price_elements = participant.querySelectorAll('#my_price')
+            let participant_name = participant.querySelector('.participant').innerText
             let participant_sum = 0
             for(price_element of price_elements){
                 console.log(price_element.innerText)
@@ -93,11 +89,15 @@
             }
             let price_output = participant.querySelector('#participant_total')
             sum += participant_sum
-            price_output.innerText = `$ ${participant_sum.toFixed(2)}`
+            price_output.innerText = `${participant_name} Total: $ ${participant_sum.toFixed(2)}`
         }
         let my_sum = document.getElementById("my_sum")
-        my_sum.innerHTML = `$ ${sum.toFixed(2)}`
+        my_sum.innerHTML = `Trip Total: $ ${sum.toFixed(2)}`
         //[0].children[3].children.my_price.innerText
+
+        //split each
+        let split = (sum / my_participants.length).toFixed(2)
+        console.log(split)
     }
 
     loadpage()

@@ -11,10 +11,7 @@ Remake.init({
       console.log("lol")
     },
     summy: (data) => {
-      let {value, watchFuncArgs, watchElem, watchAttrName, camelCaseKeyName, dataSourceElem, dataTargetElems, object} = data;
-
       loadpage()
-
     } 
   },
 });

@@ -81,11 +81,27 @@ body {
 
 .participant {
   margin-top: 30px;
-  margin-left: 70px;
+  margin-left: 5px;
   margin-bottom: 30px;
   border: 10px 10px solid black;
   border-style: dashed;
   width: 300px;
+}
+
+.participant_info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap:10px;
+}
+
+#participant_total{
+  padding-top:32px;
+}
+
+#my_sum{
+  width: fit-content;
+  height: fit-content;
 }
 
 .event_box {
