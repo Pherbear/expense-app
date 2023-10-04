@@ -81,15 +81,51 @@ body {
 
 .participant {
   margin-top: 30px;
-  margin-left: 70px;
+  margin-left: 5px;
   margin-bottom: 30px;
   border: 10px 10px solid black;
   border-style: dashed;
   width: 300px;
 }
+.participants{
+  padding-top : 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.participant_info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.my_participant{
+  border: 5px solid pink;
+  border-radius: 10px;
+}
+
+#participant_total{
+  padding-top:32px;
+}
+
+#my_sum{
+  width: fit-content;
+  height: fit-content;
+}
+
+.sum_container{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
 
 .event_box {
-  margin-left: 100px;
+  margin-left: 15px;
   margin-bottom: 15px;
   border: 10px 10px solid black;
   border-style: double;
@@ -107,12 +143,36 @@ body {
   cursor: pointer;
 }
 
-.trip_name 
-{
-  margin-left: 500px;
+.trip_container{
+  display: flex;
+  justify-content: center;
+}
+
+.trip_name {
   margin-top: 20px;
   border: 10px 10px pink;
   border-style:dotted;
-  width: 270px;
   text-align: center;
+}
+.participant_button{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.event{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 4px;
+  border-top: black 1px solid;
+}
+
+.event_button{
+  display:flex;
+  justify-content: center;
+  padding-bottom: 5px;
 }
