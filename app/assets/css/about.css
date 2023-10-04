@@ -38,18 +38,26 @@
   align-items: center;
 }
 .what{
-  background-color: #FDFD96;
   background-image: url("/assets/images/cash-hero-TP.jpg");
+  background-size: 200px;
   width: 50%;
-  height: 300px;
+  height: 200px;
+  position: absolute;
+  clip-path: polygon(0 0, 0 200px, 60px 200px, 140px 0);
+  z-index:10;
+  background-color: #fda487;
+  background-blend-mode: multiply;
 }
 .why{
-  background-color: #fda487;
   background-image: url("/assets/images/Cash.jpg");
+  background-size: 200px;
   width: 50%;
-  height: 300px;
-  
+  height: 200px;
+  position: absolute;
+  background-color: #FDFD96;
+  background-blend-mode: multiply;
 }
+
 .journey{
   background-color: pink;
   padding: 30px 20px 30px 20px;
