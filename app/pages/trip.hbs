@@ -1,29 +1,33 @@
 <div object key:text="@search" key:id="{{currentItem.id}}" key:sum="@search">
     <div class="trip_container">
-        <div 
-            target:text="@innerText"
-            edit:text:without-remove
-            style="font-size: 40px;"
-            class="trip_name"
-        >
+        <div target:text="@innerText" edit:text:without-remove style="font-size: 40px;" class="trip_name">
             {{currentItem.text}}
         </div>
     </div>
     <div class="sum_container">
-    <div id="my_sum"></div>
+        <div class="breakdown">
+            <div id="my_sum"></div>
+            <div style="font-size: 20px;">
+                Trip Summary:<br>
+                <div id="split"></div><br>
+                <ul id="owes"></ul>
+            </div>
+        </div>
+        <canvas id="myChart" class="chart"></canvas>
     </div>
 
     <div style="margin-top: 20px; margin-left: 30px;" class="participant_button">
         <div>Participants:</div>
-        <button class="button button--add-participant" new:participant style="margin-left: 20px;">Add Participant</button>
+        <button class="button button--add-participant" new:participant style="margin-left: 20px;">Add
+            Participant</button>
     </div>
-    
+
 
     <div object>
-        <div class="participants" key="participants" array sortable="participants" >
+        <div class="participants" key="participants" array sortable="participants">
             {{#for participant in currentItem.participants}}
             <div object key:name="@search" key:id="{{participant.id}}" id="my_participant" class="my_participant">
-                <div class="participant_info"> 
+                <div class="participant_info">
                     <p target:name="@innerText" class="participant" edit:name watch:name="summy()">
                         {{default participant.name "New Participant"}}
                     </p>
@@ -31,37 +35,26 @@
                 </div>
 
                 <div object>
-                  <div array key="events" class="events">
-                    {{#for event in participant.events}}
-                    <div
-                        object 
-                        key:p-event="@search"
-                        key:price="@search"
-                        key:id="{{event.id}}"
-                        watch:price="summy()"
-                        class="event"
-                    >
-                        <div target:p-event="@innerText" edit:p-event class="event_box">
-                            {{default event.pEvent "Event"}}
+                    <div array key="events" class="events" sortable>
+                        {{#for event in participant.events}}
+                        <div object key:p-event="@search" key:price="@search" key:id="{{event.id}}"
+                            watch:price="summy()" class="event">
+                            <div target:p-event="@innerText" edit:p-event class="event_box">
+                                {{default event.pEvent "Event"}}
+                            </div>
+                            <div target:price="@innerText" edit:price class="event_box" id="my_price"
+                                watch:price="summy()">
+                                {{default event.price "0.00"}}
+                            </div>
                         </div>
-                        <div 
-                            target:price="@innerText" 
-                            edit:price 
-                            class="event_box"
-                            id="my_price"
-                            watch:price="summy()"
-                            >
-                            {{default event.price "0.00"}}
-                        </div>
+                        {{/for}}
                     </div>
-                    {{/for}}
-                  </div>
                 </div>
                 <div id="participant_sum"><!--this is where the participant sum is--></div>
                 <div class="event_button">
-                  <button class="button button--add-event" new:event>
-                    Add Event
-                  </button>
+                    <button class="button button--add-event" new:event>
+                        Add Event
+                    </button>
                 </div>
             </div>
             {{/for}}
@@ -70,33 +63,100 @@
 
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    function loadpage(){
+
+
+    let priceChart = {};
+    let data = [
+        //{name: 'John Doe', price: 35.50}
+    ];
+
+    function loadpage() {
         let sum = 0
+        let split = 0
+        data = []
+
+        //load participants and gather data for chart
         let my_participants = document.querySelectorAll('#my_participant')
-        console.log(my_participants)
         for (participant of my_participants) {
             let price_elements = participant.querySelectorAll('#my_price')
             let participant_name = participant.querySelector('.participant').innerText
             let participant_sum = 0
-            for(price_element of price_elements){
-                console.log(price_element.innerText)
+            for (price_element of price_elements) {
                 participant_sum += parseFloat(price_element.innerText)
                 price_element.innerText = parseFloat(price_element.innerText).toFixed(2)
             }
             let price_output = participant.querySelector('#participant_total')
             sum += participant_sum
             price_output.innerText = `${participant_name} Total: $ ${participant_sum.toFixed(2)}`
+
+            data.push({ name: participant_name, price: participant_sum.toFixed(2) })
         }
         let my_sum = document.getElementById("my_sum")
         my_sum.innerHTML = `Trip Total: $ ${sum.toFixed(2)}`
 
-        //split each
-        let split = (sum / my_participants.length).toFixed(2)
-        console.log(split)
+        //split each (trip summary)
+        split = (sum / my_participants.length).toFixed(2)
+        let my_split = document.getElementById('split')
+        my_split.innerText = `Split between participants: $ ${split}`
+
+        let owes = document.getElementById('owes')
+        owes.innerHTML = ``
+
+        for (participant of data) {
+            let difference = participant.price - split
+            let text = ``
+            if (difference < 0) {
+                text = `<li style="color:red"> ${participant.name} owes $ ${(difference * -1).toFixed(2)} </li>`
+            } else if (difference > 0) {
+                text = `<li style="color:green"> ${participant.name} is owed $ ${(difference).toFixed(2)} </li>`
+            }
+            owes.innerHTML += text
+        }
+
+    }
+
+
+    function loadchart() {
+        priceChart = new Chart(document.getElementById('myChart'),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: data.map(row => row.name),
+                    datasets: [
+                        {
+                            label: '$$ Spent',
+                            data: data.map(row => row.price),
+                            hoverOffset: 4,
+                            backgroundColor: [
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                                `#${Math.floor(Math.random()*16777215).toString(16)}`,
+                            ],
+                            borderColor: 'hotpink',
+                        }
+                    ]
+                }
+            }
+        );
+    }
+
+    function addData(chart) {
+        console.log('update')
+        chart.data.labels = data.map(row => row.name)
+        chart.data.datasets[0].data = data.map(row => row.price)
+        chart.update();
     }
 
     loadpage()
+    loadchart()
 
 </script>

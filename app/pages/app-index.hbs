@@ -17,16 +17,24 @@
 </div>
 
 <div object>
-  <div array key="trips">
+  <div array key="trips" class="trip_cards">
     {{#for trip in trips}}
-    <a 
-        object key:text="@innerText"
-        key:id="{{trip.id}}"
-        href="trip/{{trip.id}}"
-        class="trips"
+    <div
+      object
+      key:text="@search"
+      key:id="{{trip.id}}"
+      key:trip-image="@search"
+      class="trips"
     >
+      <div style="width: fit-content; align-self:flex-end;">
+        <button class="edit_button" edit:text >...</button>
+      </div>
+      <input update:trip-image type="file">
+      <img target:trip-image="@attr:src" src="{{trip.tripImage}}" class="image">
+      <a target:text="@innerText" href="trip/{{trip.id}}">
         {{default trip.text "New Trip"}}
-    </a>
+      </a>
+    </div>
     {{/for}}
   </div>
 </div>
