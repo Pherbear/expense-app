@@ -16,7 +16,7 @@
         <canvas id="myChart" class="chart"></canvas>
     </div>
 
-    <div style="margin-top: 20px; margin-left: 30px;" class="participant_button">
+    <div style="margin-top: 20px; margin-left: 30px;" class="participant_button" id="addParticipant">
         <div>Participants:</div>
         <button class="button button--add-participant" new:participant style="margin-left: 20px;">Add
             Participant</button>
@@ -115,7 +115,15 @@
             owes.innerHTML += text
         }
 
+        my_div = document.getElementById('addParticipant')
+        my_div = my_div.querySelector('div')
+        if (data.length == 0){
+            my_div.innerText = 'Get Started Here ------------------------------->'
+        } else {
+            my_div.innerText = 'Participants:'
+        }
     }
+
 
 
     function loadchart() {
