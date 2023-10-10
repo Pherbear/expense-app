@@ -22,14 +22,14 @@
 <body>
   <div class="container">
     <div class="nav">
-      <a class="logo" href="{{#if currentUser}}/{{currentUser.details.username}}{{else}}/{{/if}}">
+      <a class="logo" href="{{#if currentUser}}/{{currentUser.details.username}}/app-index{{else}}/{{/if}}">
         <img class="logo__image" src="/assets/images/logo.svg">
         <span class="logo__text">Expense App <span class="logo__version">v1.0</span></span>
       </a>
       {{#if currentUser}}
         <div class ="links">
           <a href="/">Home</a>
-          <a href="/{{currentUser.details.username}}/app-index">My Trips</a>
+          <a href="/{{currentUser.details.username}}/trips">My Trips</a>
           <a href="/about">About Us</a>
         </div>
         <div class="nav__user">

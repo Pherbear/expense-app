@@ -1,32 +1,39 @@
-<!-- show all trips here -->
+<div class="front-page">
+  {{!-- <div class="front-page__preview-container">
+    <img class="front-page__preview" src="/assets/images/kanban-screenshot.png">
+  </div> --}}
+  <h2 class="front-page__heading">Welcome to BillBuddies</h2>
+  <div style="display:flex;flex-direction:row;">
+        <div style="">
+            <img src="/assets/images/aboutUsTop.jpg">
+            <h1>Simplicity</h1>
+            <p> Have fun with less headaches</p>
+        </div>
+        <div style="padding: 30px;">
+            
+              At BillBuddies, our mission is to simplify and enhance the way friends and travelers share expenses. 
+          We believe that memorable adventures should be free from financial worries. Our innovative platform empowers groups 
+          of friends to effortlessly divide and settle their expenses, fostering stronger bonds and ensuring everyone enjoys the journey. 
+          With transparency, fairness, and convenience at the core of our values, we are dedicated to making every trip a seamless 
+          and enjoyable experience. Join us on a mission to redefine how friends travel, one shared expense at a time.
 
-
-
-{{!-- <div style="padding-top:5px">
-  <button class="button button--add-trip" new:trip>
-    Add Trip
-  </button>
-</div> --}}
-
-<div style="margin-left: 60px; font-weight: bolder; color: purple; display: inline-block; margin-top: 30px;">all of {{currentUser.details.username}}'s trips here: 
-  <div style="padding-top:5px">
-    <button class="button button--add-trip" new:trip>
-      Add Trip
-    </button>
-  </div>
+          {{#if currentUser}}
+    <a class="button button--large" href="/{{currentUser.details.username}}/trips" style="margin-left: 50%; margin-top: 50%; margin-bottom: 50px;">Check out my trips</a>
+  {{else}}
+    <a class="button button--large" href="/user/signup" style="margin-left: 50%; margin-top: 50%; margin-bottom: 50px;">Sign up!</a>
+  {{/if}}
+        </div>
+    </div>
+  {{!-- {{#if currentUser}}
+    <a class="button button--large" href="/{{currentUser.details.username}}">Go to your board</a>
+  {{else}}
+    <a class="button button--large" href="/user/signup" style="margin-left: 50%; margin-bottom: 50%">Sign up!</a>
+  {{/if}} --}}
+  <hr>
+  <br>
+  <br>
+  <footer style="height: 50px;">
+  <a href="/about" style="margin-left: 70%; margin-bottom: 50px;">About Us </a>
+</footer>
 </div>
 
-<div object>
-  <div array key="trips">
-    {{#for trip in trips}}
-    <a 
-        object key:text="@innerText"
-        key:id="{{trip.id}}"
-        href="trip/{{trip.id}}"
-        class="trips"
-    >
-        {{default trip.text "New Trip"}}
-    </a>
-    {{/for}}
-  </div>
-</div>

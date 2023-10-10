@@ -12,6 +12,7 @@ Remake.init({
     },
     summy: (data) => {
       loadpage()
+      addData(priceChart)
     } 
   },
 });
