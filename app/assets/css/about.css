@@ -1,30 +1,12 @@
+/*THE CSS PAGE FOR ABOUT.HBS*/
+
+/*Summary Properties*/
 .Mission {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: pink;
 }
-
-.image-container {
-  display: flex;
-  align-items: center;
-}
-
-.about-image {
-  width: 650px; 
-  margin: 15px 15px 15px 15px;
-  border-radius: 50%;
-}
-
-.image-text {
-  position: absolute;
-  bottom: 50px;
-  left: 30px;
-  background-color: purple;
-  color: white;
-  padding: 5px 20px 5px 20px;
-}
-
 .about-us {
   text-align: center;
   margin-right: 25px;  
@@ -32,32 +14,73 @@
   color: #541c2c;
 }
 
+/*Image Properties*/
+.image-container {
+  display: flex;
+  align-items: center;
+}
+.about-image {
+  width: 55%; 
+  margin: 15px 15px 15px 15px;
+  border-radius: 50%;
+}
+
+/*Middle Object Properties*/
 .what-why{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: medium;
+  margin: 25px;
 }
 .what{
-  background-image: url("/assets/images/cash-hero-TP.jpg");
-  background-size: 200px;
-  width: 50%;
-  height: 200px;
-  position: absolute;
-  clip-path: polygon(0 0, 0 200px, 60px 200px, 140px 0);
-  z-index:10;
-  background-color: #fda487;
-  background-blend-mode: multiply;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  color: #541c2c;
+  background-color: #ffaf94;
+  overflow: auto;
+  text-align: center;
+  box-shadow: inset 5em 2em coral;
+  padding-left: 5em;
 }
 .why{
-  background-image: url("/assets/images/Cash.jpg");
-  background-size: 200px;
-  width: 50%;
-  height: 200px;
-  position: absolute;
-  background-color: #FDFD96;
-  background-blend-mode: multiply;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #ffff87;
+  color: #541c2c;
+  overflow: auto;
+  text-align: center;
+  box-shadow: inset 5em 2em gold;
+  padding-left: 5em;
 }
 
+/*Contact and Team Properties*/
+.team{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+}
+.person1, .person2, .person3, .person4{
+  background-color: rgb(255, 255, 180);
+  width: 25%;
+  height: 300px;
+  padding: 10px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  font-family: 'Brush Script MT', 'Lucida Handwriting';
+}
+.person-img{
+  width: 20%;
+}
+.divider{
+  width: 5%;
+}
+
+/*Bottom of Page Properties*/
 .journey{
   background-color: pink;
   padding: 30px 20px 30px 20px;
