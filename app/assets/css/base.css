@@ -108,6 +108,7 @@ body {
 .my_participant{
   border: 5px solid pink;
   border-radius: 10px;
+  background: yellow;
 }
 
 #participant_total{
@@ -119,7 +120,7 @@ body {
   width: fit-content;
   height: fit-content;
   font-size: 50px;
-  padding-top: 20%;
+  padding-top: 10%;
 }
 
 .sum_container{
@@ -127,7 +128,13 @@ body {
   justify-content: center;
   padding-top: 20px;
   gap: 100px;
-
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 5px solid hotpink;
+  border-radius: 5px;
+  background: cyan;
 }
 
 .event_box {
@@ -156,8 +163,12 @@ body {
 
 .trip_name {
   margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   border: 10px 10px pink;
-  border-style:dotted;
+  border-radius: 5px;
+  border-style: solid;
   text-align: center;
 }
 .participant_button{
@@ -165,6 +176,7 @@ body {
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 150px;
+  font-size: 40px;
 }
 
 .event{
@@ -200,6 +212,8 @@ body {
 
 .image{
   max-height: 300px;
+  margin: 5px;
+
 }
 
 .trips{
@@ -210,14 +224,46 @@ body {
   font-size: 40px;
   border: 10px 10px solid black;
   border-style: double;
+  border-radius: 5px;
   width: 300px;
-  text-align: center;
   margin: 50px;
+}
+
+.trips a {
+  text-align: center;
+}
+
+.trips a:hover, .edit_button:hover{
+  background: rgb(119, 53, 53);
+  color: white;
 }
 
 .edit_button{
   font-size: 25px;
   position: relative;
-  top: 0;
-  padding-right: 10px;
+  padding-right: 5px;
+}
+
+.edit_button_div {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px;
+}
+
+.user_trips{
+  font-size: 50px;
+  border: 5px solid pink;
+  border-radius: 15px;
+  width: fit-content;
+  background: hotpink;
+}
+
+.trips_header{
+  margin-left: 60px; 
+  font-weight: bolder; 
+  color: purple; 
+  display: flex;
+  flex-direction: column; 
+  margin-top: 30px;
+  gap: 25px;
 }
