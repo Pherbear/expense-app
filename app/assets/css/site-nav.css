@@ -22,10 +22,11 @@
 .nav {
   flex-shrink: 0;
   display: flex;
-  height: 72px;
+  height: 60px;
   background-color: #e75480 ;
   color: #fff;
   position: sticky;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .nav__user {
   display: flex;
@@ -51,5 +52,21 @@
   flex-direction: row;
   align-items: center;
   padding-left: 10px;
-  gap: 15px;
+}
+
+.links a {
+  padding-top: 22px;
+  padding-bottom: 20px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border-right: black 1px solid;
+}
+
+.links a:hover{
+  background: rgb(119, 53, 53);
+  color: black;
+}
+
+.links a:nth-child(1) {
+  border-left: black 1px solid;
 }

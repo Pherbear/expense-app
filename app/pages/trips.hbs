@@ -8,11 +8,14 @@
   </button>
 </div> --}}
 
-<div style="margin-left: 60px; font-weight: bolder; color: purple; display: inline-block; margin-top: 30px;">all of {{currentUser.details.username}}'s trips here: 
+<div class="trips_header">
   <div style="padding-top:5px">
     <button class="button button--add-trip" new:trip>
       Add Trip
     </button>
+  </div>
+  <div class="user_trips">
+    {{currentUser.details.username}}'s trips: 
   </div>
 </div>
 
@@ -26,7 +29,7 @@
       key:trip-image="@search"
       class="trips"
     >
-      <div style="width: fit-content; align-self:flex-end;">
+      <div class="edit_button_div">
         <button class="edit_button" edit:text >...</button>
       </div>
       <input update:trip-image type="file">

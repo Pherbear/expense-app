@@ -15,6 +15,12 @@
   color: #541c2c;
   position: absolute;
 }
+.about-us {
+  text-align: center;
+  margin-right: 25px;  
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #541c2c;
+}
 
 /*Image Properties*/
 .image-container {
