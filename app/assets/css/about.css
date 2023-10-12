@@ -15,12 +15,6 @@
   color: #541c2c;
   position: absolute;
 }
-.about-us {
-  text-align: center;
-  margin-right: 25px;  
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: #541c2c;
-}
 
 /*Image Properties*/
 .image-container {
@@ -65,6 +59,11 @@
 }
 
 /*Contact and Team Properties*/
+.Meet{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #541c2c;
+}
 .team{
   display: flex;
   justify-content: center;
@@ -73,16 +72,19 @@
   margin: 10px;
 }
 .person1, .person2, .person3, .person4{
-  background-color: rgb(255, 255, 180);
+  background-color: beige;
+  color: #541c2c;
   width: 25%;
   height: 300px;
   padding: 10px;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-  font-family: 'Brush Script MT', 'Lucida Handwriting';
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: larger;
 }
 .person-img1, .person-img2, .person-img3, .person-img4{
-  width: 100%;
-  margin: 15px 15px 15px 15px;
+  width: 90%;
+  opacity: 0.8;
 }
 .divider{
   width: 5%;
