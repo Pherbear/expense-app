@@ -83,6 +83,10 @@
     box-sizing: none;
 }
 
+body{
+    background-color: rgb(236, 211, 181);
+}
+
 @media only screen and (max-width: 900px) {
     .landing_button{
         margin-right: 130px;

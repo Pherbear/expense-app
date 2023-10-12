@@ -83,7 +83,8 @@ body {
   margin-top: 30px;
   margin-left: 5px;
   margin-bottom: 30px;
-  border: 2px solid black;
+  border: 4px solid rgb(247, 134, 134);
+  border-radius: 5px;
   width: 300px;
 }
 
@@ -118,11 +119,14 @@ body {
 .my_participant{
   border: 5px solid pink;
   border-radius: 10px;
-  background: yellow;
+  background: rgb(218, 92, 184);
+  color: white;
 }
 
 #participant_total{
   padding-top:32px;
+  border-bottom: white 5px solid;
+  margin-bottom: 25px;
 }
 
 #my_sum{
@@ -144,7 +148,7 @@ body {
   padding-bottom: 25px;
   border: 5px solid hotpink;
   border-radius: 5px;
-  background: cyan;
+  background: rgb(211, 152, 218);
 }
 
 @media only screen and (max-width: 900px) {
@@ -220,7 +224,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  margin-left: 100px;
+  margin-left: 50px;
   justify-content: space-between;
 }
 
