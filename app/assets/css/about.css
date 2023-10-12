@@ -5,7 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 172, 162);
+  background-color: #ffaca2;
+  height: fit-content;
+  pointer-events: none;
 }
 .about-us {
   text-align: right;
@@ -98,3 +100,48 @@
   color: #541c2c;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+
+@media only screen and (max-width: 908px) {
+  .about-us{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    align-items: center;
+    font-size: 15px;
+    height: 100%;
+    text-shadow: rgb(205, 144, 144) 2px 5px;
+    
+  }
+  .image-container{
+    height: 500px;
+  }
+  .about-image {
+    width: 100%; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+  @media only screen and (max-width: 549px) {
+    .person1, .person2, .person3, .person4{
+      height: fit-content;
+    }
+    .what, .why{
+      padding-left: 2em;
+    }
+    .what{
+      box-shadow: inset 2em 2em rgb(253, 140, 99);;
+    } 
+    .why{
+      box-shadow: inset 2em 2em rgb(255, 229, 80);;
+    }
+    .Mission{
+      flex-direction: row;
+      height: 500px;
+    }
+    .about-us{
+      margin-left: 10%;
+      font-size:10px;
+    }
+  }

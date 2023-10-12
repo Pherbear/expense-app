@@ -12,6 +12,24 @@
     margin: 50px;
 }
 
+.trips_header button{
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+}
+
+.trip_cards{
+    border: 5px solid hotpink;
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 0px;
+    background-color: antiquewhite;
+}
+
+.button{
+    background: rgb(149, 57, 103);
+}
+
 .landing_page {
     width: 100%;
     height: 800px;
@@ -38,6 +56,8 @@
     border: hotpink 20px solid;
 }
 
+
+
 .landing_button_and_description{
     display: flex;
     flex-direction: row;
@@ -62,3 +82,47 @@
     width: 250%;
     box-sizing: none;
 }
+
+body{
+    background-color: rgb(236, 211, 181);
+}
+
+@media only screen and (max-width: 900px) {
+    .landing_button{
+        margin-right: 130px;
+    }
+    .landing_text{
+        padding-left: 20px;
+    }
+    .landing_button_and_description{
+        gap: 20px;
+    }
+    .landing_image{
+        height: 900px;
+    }
+    .landing_page{
+        height: 1000px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .landing_text{
+        padding-left: 10px;
+        font-size: 17px;
+    }
+    .nav__user a{
+        width: 55px;
+    }
+}
+
+@media only screen and (max-width: 549px) {
+    .landing_button_and_description{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .landing_button{
+        width: 100px;
+    }
+}
+
