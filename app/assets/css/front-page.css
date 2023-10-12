@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .front-page {
-  margin: 4.5rem auto;
+  /* margin: 4.5rem auto; */
   text-align: center;
 }
 .front-page__preview-container {
