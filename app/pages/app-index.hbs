@@ -4,22 +4,26 @@
   </div> --}}
   <div  class="landing_page">
         <h2 class="front-page__heading">Welcome to BillBuddies</h2>
-        <h1>Simplicity</h1>
-        <p>Have fun with less headaches</p>
         <div class="landing_image">
-            <div class="landing_text">
-              At BillBuddies, our mission is to simplify and enhance the way friends and travelers share expenses. 
-          We believe that memorable adventures should be free from financial worries. Our innovative platform empowers groups 
-          of friends to effortlessly divide and settle their expenses, fostering stronger bonds and ensuring everyone enjoys the journey. 
-          With transparency, fairness, and convenience at the core of our values, we are dedicated to making every trip a seamless 
-          and enjoyable experience. Join us on a mission to redefine how friends travel, one shared expense at a time.
-           </div>
-            <div class="landing_button">
-          {{#if currentUser}}
-            <a class="button button--large" href="/{{currentUser.details.username}}/trips">Check out my trips</a>
-          {{else}}
-            <a class="button button--large" href="/user/signup">Sign up!</a>
-          {{/if}}
+            <div class="simplicity">
+              <h1>Simplicity</h1>
+              <p>Have fun with less headaches</p>
+            </div>
+            <div class="landing_button_and_description">
+              <div class="landing_text">
+                At BillBuddies, our mission is to simplify and enhance the way friends and travelers share expenses. 
+            We believe that memorable adventures should be free from financial worries. Our innovative platform empowers groups 
+            of friends to effortlessly divide and settle their expenses, fostering stronger bonds and ensuring everyone enjoys the journey. 
+            With transparency, fairness, and convenience at the core of our values, we are dedicated to making every trip a seamless 
+            and enjoyable experience. Join us on a mission to redefine how friends travel, one shared expense at a time.
+            </div>
+              <div class="landing_button">
+            {{#if currentUser}}
+              <a class="button button--large" href="/{{currentUser.details.username}}/trips">Check out my trips</a>
+            {{else}}
+              <a class="button button--large" href="/user/signup">Sign up!</a>
+            {{/if}}
+              </div>
             </div>
 
         </div>
