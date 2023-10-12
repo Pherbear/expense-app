@@ -83,10 +83,10 @@ body {
   margin-top: 30px;
   margin-left: 5px;
   margin-bottom: 30px;
-  border: 10px 10px solid black;
-  border-style: dashed;
+  border: 2px solid black;
   width: 300px;
 }
+
 .participants{
   padding-top : 25px;
   padding-left: 40px;
@@ -103,6 +103,16 @@ body {
   justify-content: space-between;
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.event{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  border-top: black 1px solid;
 }
 
 .my_participant{
@@ -125,7 +135,7 @@ body {
 
 .sum_container{
   display: flex;
-  justify-content: center;
+  align-items: center;
   padding-top: 20px;
   gap: 100px;
   margin-left: 25px;
@@ -135,6 +145,20 @@ body {
   border: 5px solid hotpink;
   border-radius: 5px;
   background: cyan;
+}
+
+@media only screen and (max-width: 900px) {
+  .sum_container{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .breakdown{
+    margin-left: 15px;
+    width: fit-content;
+  }
+  .chart{
+    width: 100% !important;
+  }
 }
 
 .event_box {
@@ -177,17 +201,10 @@ body {
   padding-left: 20px;
   padding-right: 150px;
   font-size: 40px;
+  margin-top: 20px; 
+  margin-left: 30px;
 }
 
-.event{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 25px;
-  border-top: black 1px solid;
-}
 
 .event_button{
   display:flex;
@@ -203,17 +220,20 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin-left: 100px;
+  justify-content: space-between;
 }
 
 .trip_cards{
   display:flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
 }
 
 .image{
   max-height: 300px;
   margin: 5px;
-
+  border: 5px solid black;
+  border-radius: 2px;
 }
 
 .trips{
@@ -253,17 +273,52 @@ body {
 .user_trips{
   font-size: 50px;
   border: 5px solid pink;
+  border-bottom: none;
   border-radius: 15px;
   width: fit-content;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top:20px;
+  padding-bottom:10px;
   background: hotpink;
 }
 
 .trips_header{
   margin-left: 60px; 
+  margin-right: 60px;
   font-weight: bolder; 
   color: purple; 
   display: flex;
   flex-direction: column; 
   margin-top: 30px;
   gap: 25px;
+  align-items: center;
 }
+  @media only screen and (max-width: 600px){
+    .participant_info{
+      gap: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .event{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .participants{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .participant_button{
+      padding-left: 0;
+      margin-left: 5px;
+    }
+    .breakdown{
+      margin-left: 30px;
+    }
+    #split{
+      font-size: 18px;
+    }
+    #owes{
+      font-size: 18px;
+    }
+  }
